@@ -326,27 +326,10 @@ void Scenario::RGB2HSV(void){
 }
 
 void Scenario::TEST(void){
-    // mRP->SetArmAngle(80, -20); //-20
-    // mRP->set_pid_params(0.4, 0.15, 0.006);
-    // mRP->ColorDetect(0);
-    // mRP->Turn(-30);
-    // mRP->ColorDetect(0);
-    // mRP->Turn(-90);
-    // mRP->ColorDetect(0);
-    // mRP->Turn(-30);
-    // mRP->ColorDetect(0);
-    // mRP->Turn(-60);
-    // mRP->ColorDetect(0);
-    // mRP->Turn(-120);
-    // mRP->ColorDetect(0);
-    // mRP->Turn(-60);
-    // while(1){
-    // mRP->ColorDetect(0);
-    // mRP->Turn(-120);
-    // mRP->ColorDetect(0);
-    // mRP->Turn(-60);
-    mRP->flag_NEO = true;
-    mRP->eyesight(30);
+   mRP->setStartTime();
+    
+   mRP->set_pid_params(0.00, 0.02, 0.0);
+    mRP->run_pid(1, 30, 150);
 }
 
 void Scenario::DoPuzzle(){
